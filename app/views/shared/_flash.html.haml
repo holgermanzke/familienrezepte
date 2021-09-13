@@ -1,0 +1,7 @@
+- if flash[:notice]
+  .bg-green-200.text-green-800.py-2.text-center.m-2.rounded-md
+    = flash[:notice]
+
+- if flash[:alert]
+  .bg-red-200.text-red-800.py-2.text-center.m-2.rounded-md
+    = flash[:alert]
