@@ -48,3 +48,4 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "tailwindcss-rails", "~> 0.4.3"
+gem "haml-rails", "~> 2.0"
