@@ -1,0 +1,6 @@
+%h1 Alle Rezepte im Überblick
+
+- @recipes.each do |recipe|
+  %ul
+    %li
+      =link_to recipe.title, recipe_path(recipe)
