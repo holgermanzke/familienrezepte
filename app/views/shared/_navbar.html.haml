@@ -1,0 +1,6 @@
+%nav.sticky.top-0.z-50.grid.grid-cols-3.bg-gray-900.shadow-md.p-5.md:px-10
+  = link_to root_path, class:"text-white relative flex items-center h-10 cursor-pointer" do
+    = heroicon "home", variant: :outline, options: {class: "mr-3"}
+    Home
+  = link_to "Alle Rezepte", recipes_path, class:"text-white relative flex items-center h-10 cursor-pointer"
+  = link_to "Rezept erstellen", new_recipe_path, class:"text-white relative flex items-center h-10 cursor-pointer"
