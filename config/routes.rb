@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: "pages#index"
 
   resources :recipes, path: "rezepte"
+  resources :ingredient_units
 end

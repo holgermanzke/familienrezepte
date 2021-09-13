@@ -1,0 +1,11 @@
+%h1 Eine Liste mit allen Einheiten für Zutaten 
+
+- @ingredient_units.each do |unit|
+  %ul
+    %li 
+      = unit.name
+      (
+      = unit.shortcut
+      )
+
+= link_to "Einheit erstellen", new_ingredient_unit_path 
