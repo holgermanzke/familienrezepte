@@ -1,2 +1,8 @@
 %h1= @recipe.title
+- @recipe.ingredients.each do |ingredient|
+  %ul
+    %li 
+      = ingredient.value
+      = ingredient.ingredient_unit.name
+      = ingredient.name
 %p= @recipe.description
