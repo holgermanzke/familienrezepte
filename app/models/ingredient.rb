@@ -1,4 +1,4 @@
-class IngredientsList < ApplicationRecord
+class Ingredient < ApplicationRecord
   belongs_to :ingredient_unit
   belongs_to :recipe
 end

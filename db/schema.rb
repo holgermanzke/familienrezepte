@@ -15,22 +15,22 @@ ActiveRecord::Schema.define(version: 2021_09_13_202809) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "ingredient_lists", force: :cascade do |t|
+  create_table "ingredient_units", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "shortcut"
+  end
+
+  create_table "ingredients", force: :cascade do |t|
     t.string "name"
     t.integer "value"
     t.bigint "ingredient_unit_id", null: false
     t.bigint "recipe_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["ingredient_unit_id"], name: "index_ingredient_lists_on_ingredient_unit_id"
-    t.index ["recipe_id"], name: "index_ingredient_lists_on_recipe_id"
-  end
-
-  create_table "ingredient_units", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "shortcut"
+    t.index ["ingredient_unit_id"], name: "index_ingredients_on_ingredient_unit_id"
+    t.index ["recipe_id"], name: "index_ingredients_on_recipe_id"
   end
 
   create_table "recipes", force: :cascade do |t|
@@ -40,6 +40,6 @@ ActiveRecord::Schema.define(version: 2021_09_13_202809) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "ingredient_lists", "ingredient_units"
-  add_foreign_key "ingredient_lists", "recipes"
+  add_foreign_key "ingredients", "ingredient_units"
+  add_foreign_key "ingredients", "recipes"
 end
