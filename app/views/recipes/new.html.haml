@@ -1,11 +1,2 @@
 %h1.text-3xl.text-center.font-semibold.my-5.text-blue-900 Neues Rezept erstellen
-= form_for @recipe do |f|
-  - if @recipe.errors.any?
-    - @recipe.errors.each do |error|
-      = error
-  %div.flex.flex-col.mx-auto{:class => "w-4/5"}
-    = f.text_field :title, placeholder: 'Name des Rezeptes', required: true, class:"bg-blue-100 mb-2 border-none rounded-md text-blue-900"
-    -# = f.text_field :ingredients, placeholder: 'Zutaten', required: true, class:"bg-blue-100 mb-2 border-none rounded-md text-blue-900"
-    = f.text_field :description, placeholder: 'Rezept', required: true, class:"bg-blue-100 mb-2 border-none rounded-md text-blue-900"
-    -# = f.text_field :author, placeholder: 'Autor des Rezeptes', required: true, class:"bg-blue-100 mb-2 border-none rounded-md text-blue-900"
-    = f.submit "Rezept erstellen", class:"bg-blue-900 p-3 text-blue-100 rounded-md w-1/4 self-center hover:bg-blue-700 shadow-lg"
+= render "form"

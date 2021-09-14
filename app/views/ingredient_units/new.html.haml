@@ -1,9 +1,2 @@
 %h1.text-3xl.text-center.font-semibold.my-5.text-blue-900 Neue Einheit für Zutaten anlegen
-= form_for @ingredient_unit do |f|  
-  - if @ingredient_unit.errors.any?
-    - @ingredient_unit.errors.each do |error|
-      = error
-  %div.flex.flex-col.mx-auto{:class => "w-4/5"}
-    = f.text_field :name, placeholder: 'Name der Einheit', required: true, class:"bg-blue-100 mb-2 border-none rounded-md text-blue-900"
-    = f.text_field :shortcut, placeholder: 'Abkürzung', required: true, class:"bg-blue-100 mb-2 border-none rounded-md text-blue-900"
-    = f.submit "Einheit erstellen", class:"bg-blue-900 p-3 text-blue-100 rounded-md w-1/4 self-center hover:bg-blue-700 shadow-lg"
+=render "form"
