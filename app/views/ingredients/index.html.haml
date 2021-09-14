@@ -1,0 +1,8 @@
+%h1 Liste aller Zutaten
+
+- @ingredients.each do |ingredient|
+  %ul
+    %li
+      = link_to ingredient.name, edit_ingredient_path(ingredient)
+
+= link_to "Neue Zutat anlegen", new_ingredient_path

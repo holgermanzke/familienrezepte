@@ -6,5 +6,6 @@ Rails.application.routes.draw do
 
   scope "/admin" do
     resources :ingredient_units, path: "zutaten-einheiten"
+    resources :ingredients, path: "zutaten"
   end
 end
