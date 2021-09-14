@@ -1,7 +1,0 @@
-= form_for @ingredient do |f|  
-  - if @ingredient.errors.any?
-    - @ingredient.errors.each do |error|
-      = error
-  %div.flex.flex-col.mx-auto{:class => "w-4/5"}
-    = f.text_field :name, placeholder: 'Name der Zutat', required: true, class:"bg-blue-100 mb-2 border-none rounded-md text-blue-900"
-    = f.submit "Zutat speichern", class:"bg-blue-900 p-3 text-blue-100 rounded-md w-1/4 self-center hover:bg-blue-700 shadow-lg"
