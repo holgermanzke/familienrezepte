@@ -1,0 +1,10 @@
+%h1 Alle User
+- @users.each do |user|
+  %ul
+    %li
+    = link_to user_path(user) do
+      = user.name
+      |
+      = user.email
+      |
+      = user.role

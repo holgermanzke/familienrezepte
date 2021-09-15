@@ -1,0 +1,6 @@
+%h1 User Profil
+= @user.name
+= @user.email
+= @user.role
+= link_to "User bearbeiten", edit_user_path
+= link_to "User löschen", user_path, method: "delete", data: { confirm: "Möchtest du den User wirklich löschen?" }

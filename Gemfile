@@ -51,3 +51,4 @@ gem "tailwindcss-rails", "~> 0.4.3"
 gem "haml-rails", "~> 2.0"
 gem "heroicon"
 gem "cocoon"
+gem 'sorcery'
