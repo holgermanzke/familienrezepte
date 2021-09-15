@@ -5,6 +5,7 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
+    @ingredient_units = IngredientUnit.all
     @recipe.ingredients.new
   end
 

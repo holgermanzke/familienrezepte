@@ -1,13 +1,13 @@
 = form_for @recipe do |f|
   - if @recipe.errors.any?
-    - @recipe.errors.each do |error|
+    - @recipe.errors.each do |error, msg|
       = error
+      = msg
   %div.flex.flex-col.mx-auto{:class => "w-4/5"}
     = f.text_field :title, placeholder: 'Name des Rezeptes', required: true, class:"bg-blue-100 mb-2 border-none rounded-md text-blue-900"
     = f.fields_for :ingredients do |i|
       = i.text_field :value, placeholder: "Menge eingeben", class:"bg-blue-100 mb-2 border-none rounded-md text-blue-900"
-      = i.text_field :ingredient_unit_id, placeholder: "Einheit auswählen", class:"bg-blue-100 mb-2 border-none rounded-md text-blue-900"
+      = i.collection_select :ingredient_unit_id, @ingredient_units, :id, :name, {prompt: "Wähle eine Maßeinheit"}, {class: "bg-blue-100 mb-2 border-none rounded-md text-gray-500"}
       = i.text_field :name, placeholder: "Zutat eingeben", class:"bg-blue-100 mb-2 border-none rounded-md text-blue-900"
     = f.text_area :description, placeholder: 'Zubereitung', rows: 15, required: true, class:"bg-blue-100 mb-2 border-none rounded-md text-blue-900"
-    -# = f.text_field :author, placeholder: 'Autor des Rezeptes', required: true, class:"bg-blue-100 mb-2 border-none rounded-md text-blue-900"
     = f.submit "Rezept erstellen", class:"bg-blue-900 p-3 text-blue-100 rounded-md w-1/4 self-center hover:bg-blue-700 shadow-lg"
