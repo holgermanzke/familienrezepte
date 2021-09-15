@@ -1,0 +1,5 @@
+.nested-fields
+  = f.text_field :value, placeholder: "Menge eingeben", class:"bg-blue-100 mb-2 border-none rounded-md text-blue-900"
+  = f.collection_select :ingredient_unit_id, @ingredient_units, :id, :name, {prompt: "Wähle eine Maßeinheit"}, {class: "bg-blue-100 mb-2 border-none rounded-md text-gray-500"}
+  = f.text_field :name, placeholder: "Zutat eingeben", class:"bg-blue-100 mb-2 border-none rounded-md text-blue-900"
+  = link_to_remove_association "Zutatat entfernen", f
