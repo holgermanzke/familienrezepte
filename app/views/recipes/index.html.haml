@@ -1,6 +1,12 @@
-%h1 Alle Rezepte im Überblick
+%h1.font-serif.text-4xl.font-semibold.text-center.mt-3.text-gray-900
+  Alle Rezepte im Überblick
 
-- @recipes.each do |recipe|
-  %ul
-    %li
-      =link_to recipe.title, recipe_path(recipe)
+.grid.grid-cols-4.mt-4.w-full.gap-4
+  - @recipes.each do |recipe|
+    = link_to recipe_path(recipe) do
+      = image_tag "spaghetti-example.jpg", class: "object-fit object-center rounded-xl"
+      .text-center.text-2xl
+        = recipe.title
+      .text-sm.text-right
+        von
+        = recipe.user.name

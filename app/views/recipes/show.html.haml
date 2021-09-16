@@ -1,9 +1,18 @@
-%h1= @recipe.title
-= @recipe.user.name
-- @recipe.ingredients.each do |ingredient|
-  %ul
-    %li 
+%h1.font-serif.text-4xl.font-semibold.text-center.mt-3.text-gray-900
+  = @recipe.title
+
+.flex.flex-col.items-center.mt-3
+  = image_tag "spaghetti-example.jpg", class: "object-fit object-center w-3/5 rounded-xl"
+  .text-sm.self-end
+    ein rezept von
+    = @recipe.user.name
+%h2.font-serif.text-2xl.font-semibold.mt-2.text-gray-900
+  Zutaten
+%ul
+  - @recipe.ingredients.each do |ingredient|
+    %li.font-serif.text-xl.mt-1.text-gray-900
       = ingredient.value
       = ingredient.ingredient_unit.name
       = ingredient.name
-%p= @recipe.description
+%p.mt-3.p-4
+  = @recipe.description

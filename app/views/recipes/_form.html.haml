@@ -4,11 +4,12 @@
       = error
       = msg
   %div.flex.flex-col.mx-auto{:class => "w-4/5"}
-    = f.text_field :title, placeholder: 'Name des Rezeptes', required: true, class:"bg-blue-100 mb-2 border-none rounded-md text-blue-900"
+    = f.text_field :title, placeholder: 'Name des Rezeptes', required: true, class:"bg-white shadow-xl mb-2 border-none rounded-md text-blue-900 outline-none"
     = f.hidden_field :user_id, value: current_user.id
     %div
       = f.fields_for :ingredients do |ingredient|
         = render "ingredient_fields", f: ingredient
-      = link_to_add_association 'Weitere Zutat hinzufügen', f, :ingredients
-    = f.text_area :description, placeholder: 'Zubereitung', rows: 15, required: true, class:"bg-blue-100 mb-2 border-none rounded-md text-blue-900"
-    = f.submit "Rezept erstellen", class:"bg-blue-900 p-3 text-blue-100 rounded-md w-1/4 self-center hover:bg-blue-700 shadow-lg"
+      .flex.justify-center.my-2
+        = link_to_add_association 'Weitere Zutat hinzufügen', f, :ingredients, class: "bg-gray-900 text-white rounded-xl px-3 py-2 shadow-lg"
+    = f.text_area :description, placeholder: 'Zubereitung', rows: 15, required: true, class:"bg-white shadow-xl mb-2 border-none rounded-md text-blue-900 outline-none"
+    = f.submit "Rezept erstellen", class:"bg-gray-900 p-3 text-white rounded-md w-1/4 self-center hover:bg-gray-700 shadow-lg"
