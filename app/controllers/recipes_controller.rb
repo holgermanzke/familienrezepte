@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+  skip_before_action :require_login, only: [:index, :show]
+
   def index
     @recipes = Recipe.all
   end
