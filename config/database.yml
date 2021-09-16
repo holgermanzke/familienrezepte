@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: familienrezepte_production
-  username: familienrezepte
+  database: familienrezepte
+  username: deploy
   password: <%= ENV['FAMILIENREZEPTE_DATABASE_PASSWORD'] %>
